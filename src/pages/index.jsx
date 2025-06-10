@@ -1,11 +1,16 @@
+import Hero from "@/components/Hero";
+import Categories from "@/components/Categories";
+
 export const metadata = {
-    title: 'Home'
+    title: 'Home',
+    isHeaderFixed: true,
 }
 
 export default function () {
     return (
         <>
-            <h1>The Best Streaming Experience</h1>
+            <Hero />
+            <Categories />
         </>
     )
 }

@@ -10,7 +10,7 @@ class OverlayMenu {
         isLock: 'is-lock',
     }
 
-    constructor(props) {
+    constructor() {
         this.rootElement = document.querySelector(this.selectors.root)
         this.dialogElement = this.rootElement.querySelector(this.selectors.dialog)
         this.burgerButtonElement = this.rootElement.querySelector(this.selectors.burgerButton)
