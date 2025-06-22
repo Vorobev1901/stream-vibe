@@ -1,10 +1,10 @@
-import Button from "@/components/Button";
+import Button from "@/components/Button/index.js";
 import {Image} from "minista"
 import './Hero.scss'
 
 const Hero = () => {
     const titleId = 'hero-title'
-    const playButtonTitle = 'Play Video'
+    const playButtonTitle = 'Play video'
 
     return (
         <section className="hero" aria-labelledby={titleId}>

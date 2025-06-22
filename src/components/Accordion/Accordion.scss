@@ -1,0 +1,30 @@
+.accordion {
+  min-block-size: fluid(67, 47);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &__content {
+    display: none;
+    margin-block-start: fluid(20, 12);
+  }
+
+  &:has(.accordion__details[open]) {
+    .accordion__content {
+      display: block;
+    }
+  }
+
+  &__summary {
+    list-style: none;
+    cursor: pointer;
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    gap: fluid-to-laptop(24, 16);
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}

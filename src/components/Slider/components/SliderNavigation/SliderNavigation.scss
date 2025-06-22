@@ -15,11 +15,21 @@
     }
   }
 
-  //&__arrow-button {
-  //  border-radius: 100%;
-  //
-  //  .button__icon.icon {
-  //    --iconSize: #{fluid-to-laptop(24, 20)};
-  //  }
-  //}
+  &__pagination {
+    display: flex;
+    column-gap: 3px;
+
+    &-bullet {
+      inline-size: 16px;
+      block-size: 4px;
+      border-radius: 100px;
+      background-color: var(--color-black-20);
+      transition-duration: var(--transition-duration);
+
+      &.is-active {
+        inline-size: 23px;
+        background-color: var(--color-red-45);
+      }
+    }
+  }
 }
