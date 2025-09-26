@@ -1,0 +1,98 @@
+.accordion-group {
+  --accordionGroupCounterHeight: #{fluid(67, 46)};
+
+  list-style: none;
+  counter-reset: custom-counter;
+
+  &--has-counter {
+    .accordion-group__item {
+      display: flex;
+      column-gap: fluid(20, 16);
+      counter-increment: custom-counter;
+      position: relative;
+      padding-inline: fluid(34, 10);
+
+      &::before {
+        @include flex-center;
+
+        content: counter(custom-counter, decimal-leading-zero);
+        font-weight: 600;
+        left: fluid(34, 10);
+        top: fluid(30, 20);
+        min-inline-size: fluid(62, 42);
+        block-size: var(--accordionGroupCounterHeight);
+        color: var(--color-white);
+        font-size: fluid-to-laptop(20, 16);
+        background-color: var(--color-black-12);
+        border-radius: var(--border-radius-m);
+        border: var(--border);
+
+        @include tablet {
+          border-radius: var(--border-radius-s);
+        }
+
+        @include mobile {
+          border-radius: var(--border-radius-xs);
+        }
+      }
+
+      @include tablet {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+      }
+    }
+  }
+
+  &--2-columns {
+    column-gap: fluid-to-laptop(80, 40);
+
+    @include tablet-above {
+      column-count: 2;
+    }
+  }
+
+  &__item {
+    padding: fluid-to-laptop(34, 24);
+    break-inside: avoid-column;
+
+    &:not(:last-child) {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        block-size: 1px;
+        inline-size: 100%;
+        background: linear-gradient(90deg, rgba(229, 0, 0, 0.00) 0%, #E50000 16.67%, rgba(229, 0, 0, 0.00) 100%);
+      }
+    }
+
+    @include tablet-above {
+      &--last-column-item {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    @include tablet {
+      --accordionGroupItemPaddingY: 40px;
+      --accordionGroupItemHalfPaddingY: calc(var(--accordionGroupItemPaddingY) / 2);
+
+      padding-block: var(--accordionGroupItemPaddingY);
+
+      &:first-child {
+        padding-block-start: var(--accordionGroupItemHalfPaddingY);
+      }
+
+      &:last-child {
+        padding-block-end: var(--accordionGroupItemHalfPaddingY);
+      }
+    }
+
+  }
+}

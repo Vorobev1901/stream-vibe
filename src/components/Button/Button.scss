@@ -48,8 +48,21 @@
     }
   }
 
+  &__black-06,
+  &__black-08,
+  &__black-10 {
+    border: var(--border);
+  }
+
+  &__black-06 {
+    background: var(--color-black-06);
+  }
+
+  &__black-08 {
+    background-color: var(--color-black-08);
+  }
+
   &__black-10 {
     background-color: var(--color-black-10);
-    border: var(--border);
   }
 }

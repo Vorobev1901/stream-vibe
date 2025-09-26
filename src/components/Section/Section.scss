@@ -17,6 +17,10 @@
 
     &:has(.section__description) {
       align-items: end;
+
+      @include mobile {
+        align-items: start;
+      }
     }
   }
 
@@ -26,4 +30,11 @@
     row-gap: fluid-to-laptop(14, 10);
   }
 
+  &__description {
+    max-inline-size: 1300px;
+  }
+
+  &__actions {
+    flex: none;
+  }
 }
