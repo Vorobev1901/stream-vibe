@@ -20,14 +20,14 @@ const defaultSliderParams = {
             slidesPerGroup: 3,
         },
         768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            slidesPerGroup: 3,
+        },
+        1024: {
             slidesPerView: 4,
             spaceBetween: 20,
             slidesPerGroup: 4,
-        },
-        1024: {
-            slidesPerView: 5,
-            spaceBetween: 20,
-            slidesPerGroup: 5,
             simulateTouch: false,
         },
         1441: {
@@ -45,7 +45,12 @@ const Slider = (props) => {
         navigationTargetElementId = null,
         params = defaultSliderParams,
         isBeyondTheViewportOnMobileS = false,
-        hasScrollbar
+        hasScrollbarOnMobile = true,
+        /**
+         * '' (default) | 'abs-bottom'
+         */
+        navigationPosition = '',
+        isNavigationHiddenMobile = true,
     } = props;
 
     return (
@@ -75,9 +80,11 @@ const Slider = (props) => {
             {!navigationTargetElementId && (
                 <SliderNavigation
                     className={'slider__navigation'}
+                    position={navigationPosition}
+                    isHiddenMobile={isNavigationHiddenMobile}
                 />)}
 
-            { hasScrollbar && (
+            { hasScrollbarOnMobile && (
                 <div
                     className="slider__scrollbar visible-mobile"
                     data-js-slider-scrollbar=""

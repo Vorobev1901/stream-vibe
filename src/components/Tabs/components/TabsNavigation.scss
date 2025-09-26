@@ -1,0 +1,60 @@
+.tabs-navigation {
+  --tabsNavigationPadding: #{fluid-to-laptop(10, 8)};
+  --tabsNavigationActiveButtonWidth: 0;
+  --tabsNavigationActiveButtonOffsetLeft: 0;
+
+  position: relative;
+  display: var(--tabsNavigationDisplay, flex);
+  background-color: var(--color-black-06);
+  border-radius: var(--border-radius-m);
+  border: var(--border);
+  padding: var(--tabsNavigationPadding);
+
+  @include laptop {
+    border-radius: var(--border-radius-s);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: var(--tabsNavigationPadding);
+    left: 0;
+    width: var(--tabsNavigationActiveButtonWidth);
+    height: calc(100% - var(--tabsNavigationPadding) * 2);
+    border-radius: var(--border-radius-m);
+    background-color: var(--color-black-15);
+    transition-duration: var(--transition-duration-longer);
+    translate: var(--tabsNavigationActiveButtonOffsetLeft);
+
+    @include tablet {
+      border-radius: var(--border-radius-xs);
+    }
+  }
+
+  &__button {
+    position: relative;
+    flex-grow: 1;
+    z-index: 10;
+    color: var(--color-gray-60);
+    padding: fluid-to-laptop(14, 12) fluid-to-laptop(24, 20);
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: var(--border-radius-m);
+
+    @include hover {
+      color: var(--color-white);
+    }
+
+    @include tablet {
+      border-radius: var(--border-radius-xs);
+    }
+
+    &.is-active {
+      color: var(--color-white);
+      pointer-events: none;
+    }
+  }
+}

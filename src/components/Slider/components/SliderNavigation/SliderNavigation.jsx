@@ -1,6 +1,6 @@
-import './SliderNavigation.scss'
 import Button from "@/components/Button";
 import classNames from "classnames";
+import './SliderNavigation.scss'
 
 const SliderNavigation = (props) => {
     const {
@@ -8,17 +8,22 @@ const SliderNavigation = (props) => {
         id,
         hasPagination = true,
         /**
-         *
          * '' (default) | 'tile'
-         *
          */
-        mode = ''
+        mode = '',
+        /**
+         * '' (default) | 'abs-bottom'
+         */
+        position = '',
+        isHiddenMobile,
     } = props;
 
     return (
         <div
             className={classNames(className, 'slider-navigation', {
-                [`slider-navigation--${mode}`]: mode
+                [`slider-navigation--${mode}`]: mode,
+                [`slider-navigation--${position}`]: position,
+                'hidden-mobile': isHiddenMobile
             })}
             id={id}
             data-js-slider-navigation=''

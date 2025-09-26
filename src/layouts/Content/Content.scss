@@ -1,0 +1,8 @@
+.content {
+  padding-block-start: fluid-to-laptop(50, 40);
+  padding-block-end: var(--section-padding-y);
+
+  &--reset-padding-top {
+    padding-block-start: 0;
+  }
+}

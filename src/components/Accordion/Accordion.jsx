@@ -1,5 +1,4 @@
-import classNames from "classnames";
-import Icon from "@/components/Icon";
+import classNames from "classnames"
 import './Accordion.scss'
 
 const Accordion = (props) => {
@@ -9,9 +8,10 @@ const Accordion = (props) => {
         id,
         name,
         isOpen,
-        description,
         children,
     } = props;
+
+    const iconTitle = 'Open accordion';
 
     return (
         <div className={classNames("accordion", className)}>
@@ -26,27 +26,17 @@ const Accordion = (props) => {
                            {title}
                        </span>
                     </h3>
-
-
-                    {isOpen ? (
-                        <Icon
-                            name='minus'
-                            className="accordion__icon"
-                            hasFill
-                        />
-                    ) : (
-                        <Icon
-                            name='plus'
-                            className="accordion__icon"
-                            hasFill
-                        />
-                    )}
+                    <span
+                        className='accordion__summary-icon'
+                        aria-label={iconTitle}
+                        title={iconTitle}>
+                    </span>
                 </summary>
             </details>
             <div
                 className="accordion__content"
                 id={id}
-                role={'default'}
+                role={'definition'}
             >
                 <div className="accordion__content-inner">
                     <div className="accordion__body">

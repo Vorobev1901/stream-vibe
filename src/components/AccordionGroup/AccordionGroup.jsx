@@ -9,6 +9,7 @@ const AccordionGroup = (props) => {
         isOrderList = true
     } = props
 
+    const itemsPerColumn = Math.ceil(children.length / columns);
     const ListTag = isOrderList ? 'ol' : 'ul';
 
     return (
@@ -18,11 +19,14 @@ const AccordionGroup = (props) => {
                 'accordion-group--has-counter': isOrderList
             })}
         >
-            {children.map((child, childIndex) => (
+            {children.map((child, index) => (
                 <li
-                    className={classNames('accordion-group__item', {
-                    })}
-                    key={childIndex}>
+                    className={classNames('accordion-group__item',
+                        {
+                            'accordion-group__item--last-column-item': columns > 1 && itemsPerColumn / (index + 1) === 1
+                        }
+                    )}
+                    key={index}>
                     {child}
                 </li>
             ))}

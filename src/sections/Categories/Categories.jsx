@@ -1,7 +1,7 @@
 import Section from "@/components/Section";
 import CategoryCard from "@/components/CategoryCard";
 import Slider from "@/components/Slider";
-import SliderNavigation from "../../components/Slider/components/SliderNavigation";
+import SliderNavigation from "@/components/Slider/components/SliderNavigation";
 import categoryItems from "./categoryItems.js";
 import './Categories.scss';
 

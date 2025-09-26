@@ -1,0 +1,41 @@
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(20, 12);
+  padding: fluid(20, 12);
+  background-color: var(--color-black-10);
+  border: var(--border);
+  border-radius: var(--border-radius-l);
+  font-size: fluid-to-laptop(16, 12);
+
+  @include laptop {
+    border-radius: var(--border-radius-m);
+  }
+
+  @include hover {
+    border-color: var(--color-white);
+  }
+
+  &__image {
+    inline-size: 100%;
+    object-fit: cover;
+    aspect-ratio: 319 / 404;
+    border-radius: inherit;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 8px;
+    align-items: center;
+  }
+
+  &__released-badge {
+    inline-size: 100%;
+
+    &-label {
+      color: var(--color-gray-75);
+    }
+  }
+
+}

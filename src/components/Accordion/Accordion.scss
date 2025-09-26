@@ -1,30 +1,103 @@
 .accordion {
-  min-block-size: fluid(67, 47);
   display: flex;
+  inline-size: 100%;
   justify-content: center;
   flex-direction: column;
 
-  &__content {
-    display: none;
-    margin-block-start: fluid(20, 12);
-  }
-
-  &:has(.accordion__details[open]) {
-    .accordion__content {
-      display: block;
-    }
+  @include tablet {
+    display: contents;
   }
 
   &__summary {
     list-style: none;
     cursor: pointer;
-    color: var(--color-white);
-    display: flex;
+    inline-size: 100%;
     justify-content: space-between;
-    gap: fluid-to-laptop(24, 16);
+    user-select: none;
+    display: flex;
+    align-items:  center;
+    column-gap: fluid-to-laptop(20, 16);
+    color: var(--color-white);
+    transition: color var(--transition-duration);
+
+    @include hover {
+      color: var(--color-red-45);
+    }
 
     &::-webkit-details-marker {
       display: none;
+    }
+
+    &-icon {
+      @include square(#{fluid-to-laptop(30, 24)});
+
+      position: relative;
+
+      &::after,
+      &::before {
+        @include abs-center;
+        content: "";
+        inline-size: fluid-to-laptop(20, 16);
+        block-size: 2.5px;
+        border-radius: 20px;
+        background-color: var(--color-white);
+        transition: rotate var(--transition-duration-longer);
+
+        @include tablet {
+          block-size: 2px;
+        }
+      }
+
+      &::before {
+        rotate: 90deg;
+      }
+    }
+  }
+
+
+  &__title {
+    min-height: var(--accordionGroupCounterHeight);
+    align-items: center;
+    display: flex;
+    color: inherit;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: var(--transition-duration-longer);
+
+    @include tablet {
+      grid-column: span 2;
+    }
+
+    &-inner {
+      min-block-size: 0;
+      overflow-y: hidden;
+    }
+  }
+
+  &__body {
+    margin-block-start: fluid(20, 12);
+    margin-inline-end: fluid-to-laptop(50, 40);
+    color:inherit;
+
+    @include tablet {
+      margin-inline-end: 0;
+    }
+  }
+
+  &:has(.accordion__details[open]) {
+    .accordion__content {
+      grid-template-rows: 1fr;
+    }
+
+    .accordion__summary {
+      &-icon {
+        &::before {
+          rotate: 0deg;
+        }
+      }
     }
   }
 }

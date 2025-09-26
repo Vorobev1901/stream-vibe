@@ -3,6 +3,7 @@ import Button from "@/components/Button/index.js";
 import Accordion from "@/components/Accordion";
 import AccordionGroup from "@/components/AccordionGroup";
 import questionItems from './questionItems.js'
+import './Questions.scss'
 
 const Questions = () => {
     const titleId = 'questions-title'
