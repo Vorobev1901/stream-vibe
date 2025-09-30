@@ -36,6 +36,7 @@
       &::after,
       &::before {
         @include abs-center;
+
         content: "";
         inline-size: fluid-to-laptop(20, 16);
         block-size: 2.5px;
@@ -60,6 +61,13 @@
     align-items: center;
     display: flex;
     color: inherit;
+    column-gap: fluid(10, 6);
+  }
+
+  &__subtitle {
+    font-size: 0.75em;
+    font-weight: 500;
+    color: var(--color-gray-60);
   }
 
   &__content {
@@ -87,9 +95,24 @@
     }
   }
 
+  &__arrow {
+    @include flex-center(true);
+    @include square(#{fluid-to-laptop(52, 44)});
+
+    background-color: var(--color-black-08);
+    border: var(--border);
+    border-radius: 50%;
+
+    transition: rotate var(--transition-duration-longer);
+  }
+
   &:has(.accordion__details[open]) {
     .accordion__content {
       grid-template-rows: 1fr;
+    }
+
+    .accordion__arrow {
+      rotate: -180deg;
     }
 
     .accordion__summary {

@@ -25,7 +25,7 @@
     min-block-size: fluid(835, 468);
     object-fit: cover;
     object-position: center;
-    aspect-ratio: 1594 / 835;
+    //aspect-ratio: 1594 / 835;
   }
 
   &__inner {
@@ -43,11 +43,15 @@
     @include mobile {
       padding-block-end: 16px;
     }
+
+    &--small-padding-y {
+      padding-block: fluid-to-laptop(20, 16);
+    }
   }
 
   &__description {
     margin-block-start: fluid-to-laptop(4, 2);
-    max-inline-size: fluid-to-laptop(1194, 960);
+    max-inline-size: fluid-to-laptop(1254, 960);
   }
 
   &__footer {
