@@ -217,7 +217,7 @@ const collectionGroups = [
                 movieItems: [
                     {
                         title: 'Morbius',
-                        imgSrc: '/src/assets/images/movies/6.png',
+                        imgSrc: 'https://res.cloudinary.com/dyjzjvudn/image/upload/w_243,h_281,c_fill/v1758887463/14_stjghu.jpg',
                         duration: '1h 30min',
                         views: '2K'
                     },
@@ -695,7 +695,7 @@ const collectionGroups = [
         title: 'Shows',
         items: [
             {
-                title: 'Our Genres',
+                title: 'Our Genres 2',
                 categoryItems
             },
             {
@@ -1058,14 +1058,14 @@ const collectionGroups = [
                     },
                     {
                         title: 'Money Heist',
-                        imgSrc: '/src/assets/images/shows/6.jpg',
+                        imgSrc: '/src/assets/images/shows/7.png',
                         duration: '1h 30min',
                         href: '/show/',
                         season: '5 Season'
                     },
                     {
                         title: 'Money Heist',
-                        imgSrc: '/src/assets/images/shows/13.webp',
+                        imgSrc: '/src/assets/images/shows/8.png',
                         duration: '1h 30min',
                         href: '/show/',
                         season: '5 Season'
@@ -1200,7 +1200,7 @@ const collectionGroups = [
                 movieItems: [
                     {
                         title: 'Kisi Ka Bhai Kisi Ki Jaan',
-                        imgSrc: '/src/assets/images/shows/14.jpg',
+                        imgSrc: 'https://res.cloudinary.com/dyjzjvudn/image/upload/w_319,h_404,c_fill,f_auto,q_auto/v1758887463/14_stjghu.jpg',
                         duration: '1h 57min',
                         rating: {
                             value: 4.5,

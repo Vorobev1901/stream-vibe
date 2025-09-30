@@ -12,7 +12,7 @@ const CategoryCard = (props) => {
     } = props;
 
     return (
-        <a className='category-card' href={'/movies'}>
+        <a className='category-card' href={'/movies/el-camino'}>
             <div className='category-card__images'>
                 {images.map((imageSrc, index) => (
                     <Image className='category-card__image' src={imageSrc} key={index}/>

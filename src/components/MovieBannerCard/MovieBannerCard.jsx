@@ -1,25 +1,35 @@
-import {Image} from "minista";
 import Button from "@/components/Button/index.js";
+import classNames from "classnames";
 import './MovieBannerCard.scss'
 
 const MovieBannerCard = props => {
     const {
         title,
         description,
-        imgSrc
+        imgSrc,
+        TitleTag = 'h2',
+        titleId,
+        isSmallPaddingY = false,
     } = props
 
     return (
         <div className="movie-banner-card">
-            <Image
+            <img
                 className="movie-banner-card__image"
                 src={imgSrc}
-                alt={''}
+                width="1594"
+                height="835"
+                alt={`Poster for ${title}`}
             />
-            <div className="movie-banner-card__inner">
-                <h2 className="movie-banner-card__title h3">
+            <div className={classNames("movie-banner-card__inner", {
+                'movie-banner-card__inner--small-padding-y': isSmallPaddingY,
+            })}>
+                <TitleTag
+                    className="movie-banner-card__title h3"
+                    id={titleId}
+                >
                     {title}
-                </h2>
+                </TitleTag>
                 <div className="movie-banner-card__description hidden-mobile">
                     <p>
                         {description}

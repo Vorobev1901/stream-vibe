@@ -18,7 +18,7 @@ const Header = (props) => {
         },
         {
             label: 'Movies & Shows',
-            href: '/movies',
+            href: '/catalog',
         },
         {
             label: 'Support',

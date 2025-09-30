@@ -7,6 +7,10 @@
     }
   }
 
+  &__item {
+    inline-size: auto;
+  }
+
   &__scrollbar {
     @include abs-x;
 
@@ -21,5 +25,14 @@
       border-radius: 20px;
       background-color: var(--color-red-45);
     }
+  }
+
+  &__navigation {
+    margin-top: fluid(40, 24);
+
+    &.slider__navigation {
+      justify-content: center;
+    }
+
   }
 }
